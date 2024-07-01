@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="24.095">
-    <testcase classname="Adding a product to the basket on Amazon" name="User searches for and adds a greeting card to the basket" time="23.989">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="25.608">
+    <testcase classname="Adding a product to the basket on Amazon" name="User searches for and adds a greeting card to the basket" time="25.458">
         <system-out>
             <![CDATA[Given the user launches the Amazon website..................................passed
 When the user searches for "greeting card"..................................passed
 And the user selects the first search result................................passed
+And the user adds the product to the basket.................................passed
+Then the product is successfully added to the basket........................passed
 ]]>
         </system-out>
     </testcase>

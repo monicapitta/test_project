@@ -2,6 +2,7 @@ package stepDefinition;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.AddProductPage;
 
@@ -21,7 +22,17 @@ public class AddProductSteps {
     }
 
     @And("the user selects the first search result")
-    public void theUserSelectsTheFirstSearchResult() throws InterruptedException {
+    public void theUserSelectsTheFirstSearchResult()  {
         addProductPage.clickFirstSearchResult();
+    }
+
+    @And("the user adds the product to the basket")
+    public void theUserAddsTheProductToTheBasket() {
+        addProductPage.addProductToBasket();
+    }
+
+    @Then("the product is successfully added to the basket")
+    public void theProductIsSuccessfullyAddedToTheBasket() {
+        addProductPage.verifyProductIsAddedToCart();
     }
 }

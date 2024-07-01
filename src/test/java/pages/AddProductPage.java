@@ -2,6 +2,7 @@ package pages;
 
 import Utils.BaseUtil;
 import Utils.DriverManager;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -26,5 +27,11 @@ public class AddProductPage extends BaseUtil {
     }
     public void clickFirstSearchResult()  {
         clickElement(By.xpath("//div[contains(@data-component-type,'s-search-result')]"));
+    }
+    public void addProductToBasket() {
+        clickElement(By.id("add-to-cart-button"));
+    }
+    public void  verifyProductIsAddedToCart() {
+        assertCartHasItems();
     }
 }

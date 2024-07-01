@@ -2,6 +2,7 @@ package Utils;
 
 
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -37,6 +38,16 @@ public class BaseUtil
             cookieBanner.click();
         }
     }
+        public int getCartItemCount() {
+            WebElement cartCount = new WebDriverWait(driver, Duration.ofSeconds(10))
+                    .until(ExpectedConditions.visibilityOfElementLocated(By.id("nav-cart-count")));
+            return Integer.parseInt(cartCount.getText().trim());
+        }
+
+        public void assertCartHasItems() {
+            int itemCount = getCartItemCount();
+            Assert.assertTrue("Cart is empty", itemCount > 0);
+        }
 
     }
 
